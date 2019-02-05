@@ -1,4 +1,4 @@
-
+use SupportTicketing;
 DROP TABLE IF EXISTS Serverities
 
 CREATE TABLE Serverities(
@@ -45,7 +45,7 @@ GO
 
 CREATE PROCEDURE RetrieveTechnicians
 AS
-SELECT * FROM Technicians
+SELECT Id ,FirstName + LastName AS fullName FROM Technicians
 GO
 
 CREATE PROCEDURE RetrieveTicketStates
