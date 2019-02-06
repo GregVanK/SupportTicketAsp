@@ -27,7 +27,7 @@
             <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Media/logo.png" />
         </div>
         <nav style="text-align:center">
-            <a>Home</a><a>Create a Service Report Ticket</a><a>View ETA</a>
+            <a href="Home.aspx">Home</a>&nbsp; &nbsp;<a href="TicketFormSheet.aspx">Create a Service Report Ticket</a>&nbsp;&nbsp;<a>View ETA</a>
         </nav>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

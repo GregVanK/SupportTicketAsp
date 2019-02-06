@@ -16,127 +16,86 @@ namespace Assignment1
         {
             this.ddlTechnician.DataTextField = "fullName";
             this.ddlTechnician.DataValueField = "Id";
-
-            fillTechnicians();
+            DBHelper.DataBinding(ddlTechnician, "RetrieveTechnicians");
 
             this.ddlServirty.DataTextField = "Name";
             this.ddlServirty.DataValueField = "Id";
-
-            fillSeverities();
+            DBHelper.DataBinding(ddlServirty, "RetrieveServerities");
 
             this.ddlState.DataTextField = "Name";
             this.ddlState.DataValueField = "Id";
 
-            fillStates();
+            DBHelper.DataBinding(ddlState, "RetrieveTicketStates");
+
 
         }
 
-        private void fillTechnicians()
+        
+
+        protected void lbtnSubmit_Click(object sender, EventArgs e)
         {
-            try
-            {
+            supportform.Visible = false;
+            supportresults.Visible = true;
+            string shortDesc = txtShortDesc.Text;
+            string tech = ddlTechnician.SelectedItem.Text;
+            string state = ddlState.SelectedItem.Text;
+            string status = rblStatus.SelectedItem.Value;
+            string severity = ddlServirty.SelectedItem.Text;
+            string dateOpened = txtDateOpened.Text;
+            string dateClosed = txtDateClose.Text;
+            string longDesc = txtLongDesc.Text;
+            string actionTaken = txtActionTaken.Text;
 
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
+            TableCell sDescCell = new TableCell();
+            sDescCell.Text = shortDesc;
+            rowSDesc.Cells.Add(sDescCell);
+            TableCell techCell = new TableCell();
+            techCell.Text = tech;
+            rowTechnician.Cells.Add(techCell);
 
-                    using (SqlCommand cmd = new SqlCommand("RetrieveTechnicians", conn))
-                    {
-                        conn.Open();
-                        using (SqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            if (dr.HasRows)
-                            {
-                                //sets up connection between dropdown and the data reader;
-                                this.ddlTechnician.DataSource = dr;
-                                this.ddlTechnician.DataBind();
-                            }
-                            else
-                            {
-                                //TODO:Add message lbl
-                                //lblMessage.Text = "No technicians found";
-                            }
-                        }
-                        conn.Close();//Not needed but here for example (using handles closing)
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
+            TableCell stateCell = new TableCell();
+            stateCell.Text = state;
+            rowState.Cells.Add(stateCell);
 
-                //blMessage.Text = ex.Message;
-            }
+            TableCell statusCell = new TableCell();
+            statusCell.Text = status;
+            rowStatus.Cells.Add(statusCell);
+
+            TableCell serverityCell = new TableCell();
+            serverityCell.Text = severity;
+            rowSeverity.Cells.Add(serverityCell);
+
+            TableCell dateOpenedCell = new TableCell();
+            dateOpenedCell.Text = dateOpened;
+            rowDateOpened.Cells.Add(dateOpenedCell);
+
+            TableCell dateClosedCell = new TableCell();
+            dateClosedCell.Text = dateClosed;
+            rowDateClosed.Cells.Add(dateClosedCell);
+
+            TableCell lDescCell = new TableCell();
+            lDescCell.Text = longDesc;
+            rowLongDesc.Cells.Add(lDescCell);
+
+            TableCell actionTakenCell = new TableCell();
+            actionTakenCell.Text = actionTaken;
+            rowActionTaken.Cells.Add(actionTakenCell);
+
+
+
+
+
+
         }
 
-        private void fillSeverities()
+        protected void calDateOpened_SelectionChanged(object sender, EventArgs e)
         {
-            try
-            {
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-
-                    using (SqlCommand cmd = new SqlCommand("RetrieveServerities", conn))
-                    {
-                        conn.Open();
-                        using (SqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            if (dr.HasRows)
-                            {
-                                //sets up connection between dropdown and the data reader;
-                                this.ddlServirty.DataSource = dr;
-                                this.ddlServirty.DataBind();
-                            }
-                            else
-                            {
-                                //TODO:Add message lbl
-                                //lblMessage.Text = "No technicians found";
-                            }
-                        }
-                        conn.Close();//Not needed but here for example (using handles closing)
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                //blMessage.Text = ex.Message;
-            }
+            this.txtDateOpened.Text = this.calDateOpened.SelectedDate.ToLongDateString();
         }
 
-        private void fillStates()
+        protected void calDateClosed_SelectionChanged(object sender, EventArgs e)
         {
-            try
-            {
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-
-                    using (SqlCommand cmd = new SqlCommand("RetrieveTicketStates", conn))
-                    {
-                        conn.Open();
-                        using (SqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            if (dr.HasRows)
-                            {
-                                //sets up connection between dropdown and the data reader;
-                                this.ddlState.DataSource = dr;
-                                this.ddlState.DataBind();
-                            }
-                            else
-                            {
-                                //TODO:Add message lbl
-                                //lblMessage.Text = "No technicians found";
-                            }
-                        }
-                        conn.Close();//Not needed but here for example (using handles closing)
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                //blMessage.Text = ex.Message;
-            }
+            this.txtDateClose.Text = this.calDateClosed.SelectedDate.ToLongDateString();
         }
     }
 }
