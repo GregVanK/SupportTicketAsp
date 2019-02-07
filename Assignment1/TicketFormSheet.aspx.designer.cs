@@ -40,6 +40,15 @@ namespace Assignment1 {
         protected global::System.Web.UI.WebControls.TextBox txtShortDesc;
         
         /// <summary>
+        /// reqShortDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqShortDesc;
+        
+        /// <summary>
         /// lblTechncian control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace Assignment1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTechnician;
+        
+        /// <summary>
+        /// reqTechnician control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTechnician;
         
         /// <summary>
         /// lblState control.
@@ -76,6 +94,15 @@ namespace Assignment1 {
         protected global::System.Web.UI.WebControls.DropDownList ddlState;
         
         /// <summary>
+        /// reqState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqState;
+        
+        /// <summary>
         /// lblStatus control.
         /// </summary>
         /// <remarks>
@@ -94,6 +121,15 @@ namespace Assignment1 {
         protected global::System.Web.UI.WebControls.RadioButtonList rblStatus;
         
         /// <summary>
+        /// reqStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqStatus;
+        
+        /// <summary>
         /// lblSeverity control.
         /// </summary>
         /// <remarks>
@@ -110,6 +146,15 @@ namespace Assignment1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlServirty;
+        
+        /// <summary>
+        /// reqSeverities control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqSeverities;
         
         /// <summary>
         /// lblDateOpened control.
@@ -139,6 +184,15 @@ namespace Assignment1 {
         protected global::System.Web.UI.WebControls.TextBox txtDateOpened;
         
         /// <summary>
+        /// reqDateOpened control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqDateOpened;
+        
+        /// <summary>
         /// lblDateClosed control.
         /// </summary>
         /// <remarks>
@@ -166,6 +220,24 @@ namespace Assignment1 {
         protected global::System.Web.UI.WebControls.TextBox txtDateClose;
         
         /// <summary>
+        /// reqDateClosed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqDateClosed;
+        
+        /// <summary>
+        /// cvtxtStartDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvtxtStartDate;
+        
+        /// <summary>
         /// lblLongDesc control.
         /// </summary>
         /// <remarks>
@@ -184,6 +256,15 @@ namespace Assignment1 {
         protected global::System.Web.UI.WebControls.TextBox txtLongDesc;
         
         /// <summary>
+        /// reqLongDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqLongDesc;
+        
+        /// <summary>
         /// lblActionTaken control.
         /// </summary>
         /// <remarks>
@@ -200,6 +281,24 @@ namespace Assignment1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtActionTaken;
+        
+        /// <summary>
+        /// reqActionTaken control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqActionTaken;
+        
+        /// <summary>
+        /// ValidationSummary1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
         /// lbtnSubmit control.

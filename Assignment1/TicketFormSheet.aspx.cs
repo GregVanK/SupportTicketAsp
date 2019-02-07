@@ -14,18 +14,21 @@ namespace Assignment1
         private string connectionString = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.ddlTechnician.DataTextField = "fullName";
-            this.ddlTechnician.DataValueField = "Id";
-            DBHelper.DataBinding(ddlTechnician, "RetrieveTechnicians");
+            if (!IsPostBack)
+            {
+                this.ddlTechnician.DataTextField = "fullName";
+                this.ddlTechnician.DataValueField = "Id";
+                DBHelper.DataBinding(ddlTechnician, "RetrieveTechnicians");
 
-            this.ddlServirty.DataTextField = "Name";
-            this.ddlServirty.DataValueField = "Id";
-            DBHelper.DataBinding(ddlServirty, "RetrieveServerities");
+                this.ddlServirty.DataTextField = "Name";
+                this.ddlServirty.DataValueField = "Id";
+                DBHelper.DataBinding(ddlServirty, "RetrieveServerities");
 
-            this.ddlState.DataTextField = "Name";
-            this.ddlState.DataValueField = "Id";
+                this.ddlState.DataTextField = "Name";
+                this.ddlState.DataValueField = "Id";
 
-            DBHelper.DataBinding(ddlState, "RetrieveTicketStates");
+                DBHelper.DataBinding(ddlState, "RetrieveTicketStates");
+            }
 
 
         }
@@ -34,52 +37,55 @@ namespace Assignment1
 
         protected void lbtnSubmit_Click(object sender, EventArgs e)
         {
-            supportform.Visible = false;
-            supportresults.Visible = true;
-            string shortDesc = txtShortDesc.Text;
-            string tech = ddlTechnician.SelectedItem.Text;
-            string state = ddlState.SelectedItem.Text;
-            string status = rblStatus.SelectedItem.Value;
-            string severity = ddlServirty.SelectedItem.Text;
-            string dateOpened = txtDateOpened.Text;
-            string dateClosed = txtDateClose.Text;
-            string longDesc = txtLongDesc.Text;
-            string actionTaken = txtActionTaken.Text;
+            if (IsValid)
+            {
+                supportform.Visible = false;
+                supportresults.Visible = true;
+                string shortDesc = txtShortDesc.Text;
+                string tech = ddlTechnician.SelectedItem.Text;
+                string state = ddlState.SelectedItem.Text;
+                string status = rblStatus.SelectedItem.Value;
+                string severity = ddlServirty.SelectedItem.Text;
+                string dateOpened = calDateOpened.SelectedDate.ToLongDateString();
+                string dateClosed = calDateClosed.SelectedDate.ToLongDateString();
+                string longDesc = txtLongDesc.Text;
+                string actionTaken = txtActionTaken.Text;
 
-            TableCell sDescCell = new TableCell();
-            sDescCell.Text = shortDesc;
-            rowSDesc.Cells.Add(sDescCell);
-            TableCell techCell = new TableCell();
-            techCell.Text = tech;
-            rowTechnician.Cells.Add(techCell);
+                TableCell sDescCell = new TableCell();
+                sDescCell.Text = shortDesc;
+                rowSDesc.Cells.Add(sDescCell);
+                TableCell techCell = new TableCell();
+                techCell.Text = tech;
+                rowTechnician.Cells.Add(techCell);
 
-            TableCell stateCell = new TableCell();
-            stateCell.Text = state;
-            rowState.Cells.Add(stateCell);
+                TableCell stateCell = new TableCell();
+                stateCell.Text = state;
+                rowState.Cells.Add(stateCell);
 
-            TableCell statusCell = new TableCell();
-            statusCell.Text = status;
-            rowStatus.Cells.Add(statusCell);
+                TableCell statusCell = new TableCell();
+                statusCell.Text = status;
+                rowStatus.Cells.Add(statusCell);
 
-            TableCell serverityCell = new TableCell();
-            serverityCell.Text = severity;
-            rowSeverity.Cells.Add(serverityCell);
+                TableCell serverityCell = new TableCell();
+                serverityCell.Text = severity;
+                rowSeverity.Cells.Add(serverityCell);
 
-            TableCell dateOpenedCell = new TableCell();
-            dateOpenedCell.Text = dateOpened;
-            rowDateOpened.Cells.Add(dateOpenedCell);
+                TableCell dateOpenedCell = new TableCell();
+                dateOpenedCell.Text = dateOpened;
+                rowDateOpened.Cells.Add(dateOpenedCell);
 
-            TableCell dateClosedCell = new TableCell();
-            dateClosedCell.Text = dateClosed;
-            rowDateClosed.Cells.Add(dateClosedCell);
+                TableCell dateClosedCell = new TableCell();
+                dateClosedCell.Text = dateClosed;
+                rowDateClosed.Cells.Add(dateClosedCell);
 
-            TableCell lDescCell = new TableCell();
-            lDescCell.Text = longDesc;
-            rowLongDesc.Cells.Add(lDescCell);
+                TableCell lDescCell = new TableCell();
+                lDescCell.Text = longDesc;
+                rowLongDesc.Cells.Add(lDescCell);
 
-            TableCell actionTakenCell = new TableCell();
-            actionTakenCell.Text = actionTaken;
-            rowActionTaken.Cells.Add(actionTakenCell);
+                TableCell actionTakenCell = new TableCell();
+                actionTakenCell.Text = actionTaken;
+                rowActionTaken.Cells.Add(actionTakenCell);
+            }
 
 
 
@@ -90,12 +96,12 @@ namespace Assignment1
 
         protected void calDateOpened_SelectionChanged(object sender, EventArgs e)
         {
-            this.txtDateOpened.Text = this.calDateOpened.SelectedDate.ToLongDateString();
+            this.txtDateOpened.Text = this.calDateOpened.SelectedDate.ToShortDateString();
         }
 
         protected void calDateClosed_SelectionChanged(object sender, EventArgs e)
         {
-            this.txtDateClose.Text = this.calDateClosed.SelectedDate.ToLongDateString();
+            this.txtDateClose.Text = this.calDateClosed.SelectedDate.ToShortDateString();
         }
     }
 }
