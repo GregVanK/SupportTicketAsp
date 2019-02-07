@@ -6,6 +6,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+/**
+ * File: TicketFormSheet
+ *Author: Greg VanKampen
+ * 2/7/2019
+ */
 
 namespace Assignment1
 {
@@ -14,6 +19,7 @@ namespace Assignment1
         private string connectionString = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //load drop down list data
             if (!IsPostBack)
             {
                 this.ddlTechnician.DataTextField = "fullName";
@@ -34,13 +40,16 @@ namespace Assignment1
         }
 
         
-
+        
         protected void lbtnSubmit_Click(object sender, EventArgs e)
         {
+            
             if (IsValid)
             {
+                //toggle form and result display
                 supportform.Visible = false;
                 supportresults.Visible = true;
+                //retrieve data
                 string shortDesc = txtShortDesc.Text;
                 string tech = ddlTechnician.SelectedItem.Text;
                 string state = ddlState.SelectedItem.Text;
@@ -50,7 +59,8 @@ namespace Assignment1
                 string dateClosed = calDateClosed.SelectedDate.ToLongDateString();
                 string longDesc = txtLongDesc.Text;
                 string actionTaken = txtActionTaken.Text;
-
+                 
+                //calculate ETA
                 TableCell ETADateCell = new TableCell();
                 DateTime date = calDateOpened.SelectedDate;
                 switch (severity.ToLower())
@@ -70,7 +80,7 @@ namespace Assignment1
                 }
                 rowETA.Cells.Add(ETADateCell);
 
-
+                //Insert data into result table
                 TableCell sDescCell = new TableCell();
                 sDescCell.Text = shortDesc;
                 rowSDesc.Cells.Add(sDescCell);
@@ -113,9 +123,10 @@ namespace Assignment1
 
 
         }
-
+        //insert selected date into text fields when selected
         protected void calDateOpened_SelectionChanged(object sender, EventArgs e)
         {
+           
             this.txtDateOpened.Text = this.calDateOpened.SelectedDate.ToShortDateString();
         }
 

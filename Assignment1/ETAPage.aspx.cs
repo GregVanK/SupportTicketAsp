@@ -5,13 +5,22 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+/**
+ * File: ETAPage
+ *Author: Greg VanKampen
+ * 2/7/2019
+ */
+
 namespace Assignment1
 {
     public partial class ETAPage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Load date into header
             lblHeader.Text = "Current Date: " + DateTime.Now.ToLongDateString();
+
+            //Load date data into the table
 
             TableCell lowDate = new TableCell();
             TableCell mediumDate = new TableCell();
