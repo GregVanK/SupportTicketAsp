@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="supportform" runat="server">
-        <asp:Label ID="lblShortDesc" runat="server" Text="Short Description: "></asp:Label>
+    <div id="supportform" runat="server" class="ctr">
+        <asp:Label ID="lblShortDesc" runat="server" Text="Short Description: "></asp:Label><br />
         <asp:TextBox ID="txtShortDesc" runat="server" ValidationGroup="validateTicket"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqShortDesc" runat="server"
             EnableClientScript="false"
@@ -14,7 +14,7 @@
             <i class="fas fa-exclamation-circle" style="color:red"></i>
         </asp:RequiredFieldValidator><br />
 
-        <asp:Label ID="lblTechncian" runat="server" Text="Technician: "></asp:Label>
+        <asp:Label ID="lblTechncian" runat="server" Text="Technician: "></asp:Label><br />
         <asp:DropDownList ID="ddlTechnician" runat="server" AppendDataBoundItems="true" ValidationGroup="validateTicket">
             <asp:ListItem Value="">--Select a Technician--</asp:ListItem>
         </asp:DropDownList>
@@ -25,7 +25,7 @@
             <i class="fas fa-exclamation-circle" style="color:red"></i>
         </asp:RequiredFieldValidator><br />
 
-        <asp:Label ID="lblState" runat="server" Text="State: "></asp:Label>
+        <asp:Label ID="lblState" runat="server" Text="State: "></asp:Label><br />
         <asp:DropDownList ID="ddlState" runat="server" AppendDataBoundItems="true" ValidationGroup="validateTicket">
             <asp:ListItem Value="">--Select a State--</asp:ListItem>
         </asp:DropDownList>
@@ -36,8 +36,8 @@
             <i class="fas fa-exclamation-circle" style="color:red"></i>
         </asp:RequiredFieldValidator><br />
 
-        <asp:Label ID="lblStatus" runat="server" Text="Ticket Status: "></asp:Label>
-        <asp:RadioButtonList ID="rblStatus" runat="server" ValidationGroup="validateTicket">
+        <asp:Label ID="lblStatus" runat="server" Text="Ticket Status: "></asp:Label><br />
+        <asp:RadioButtonList ID="rblStatus" runat="server" ValidationGroup="validateTicket" CssClass="custom-center-item">
             <asp:ListItem Text="Open" Value="Open"></asp:ListItem>
             <asp:ListItem Text="Closed" Value="Closed"></asp:ListItem>
         </asp:RadioButtonList>
@@ -45,10 +45,10 @@
             ErrorMessage="Status is Required"
             ControlToValidate="rblStatus"
             ValidationGroup="validateTicket">
-            <i class="fas fa-exclamation-circle" style="color:red"></i>
+            <i class="fas fa-exclamation-circle" style="color:red"></i> 
         </asp:RequiredFieldValidator><br />
 
-        <asp:Label ID="lblSeverity" runat="server" Text="Severity: "></asp:Label>
+        <asp:Label ID="lblSeverity" runat="server" Text="Severity: "></asp:Label><br />
         <asp:DropDownList ID="ddlServirty" runat="server" AppendDataBoundItems="true" ValidationGroup="validateTicket">
             <asp:ListItem Value="">--Select a Severity--</asp:ListItem>
         </asp:DropDownList><br />
@@ -59,8 +59,8 @@
             <i class="fas fa-exclamation-circle" style="color:red"></i>
         </asp:RequiredFieldValidator><br />
 
-        <asp:Label ID="lblDateOpened" runat="server" Text="Date Opened: "></asp:Label>
-        <asp:Calendar ID="calDateOpened" runat="server"
+        <asp:Label ID="lblDateOpened" runat="server" Text="Date Opened: " ></asp:Label><br />
+        <asp:Calendar ID="calDateOpened" runat="server" CssClass="custom-center-item"
             BackColor="White" BorderColor="#3366CC"
             BorderWidth="1px" CellPadding="1"
             DayNameFormat="Shortest"
@@ -83,8 +83,8 @@
             <i class="fas fa-exclamation-circle" style="color:red"></i>
         </asp:RequiredFieldValidator><br />
 
-        <asp:Label ID="lblDateClosed" runat="server" Text="Date Closed: "></asp:Label>
-        <asp:Calendar ID="calDateClosed" runat="server"
+        <asp:Label ID="lblDateClosed" runat="server" Text="Date Closed: " ></asp:Label><br />
+        <asp:Calendar ID="calDateClosed" runat="server" CssClass="custom-center-item"
             BackColor="White" BorderColor="#3366CC"
             BorderWidth="1px" CellPadding="1"
             DayNameFormat="Shortest"
@@ -98,7 +98,7 @@
             <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
             <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
             <WeekendDayStyle BackColor="#CCCCFF" />
-        </asp:Calendar>
+        </asp:Calendar><br />
         <asp:TextBox ID="txtDateClose" runat="server" ValidationGroup="validateTicket"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqDateClosed" runat="server"
             ErrorMessage="Date Closed is Required"
@@ -117,7 +117,7 @@
         </asp:CompareValidator>
         <br />
 
-        <asp:Label ID="lblLongDesc" runat="server" Text="Long Desc: "></asp:Label>
+        <asp:Label ID="lblLongDesc" runat="server" Text="Long Desc: "></asp:Label><br />
         <asp:TextBox ID="txtLongDesc" TextMode="MultiLine" runat="server" ValidationGroup="validateTicket"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqLongDesc" runat="server"
             ErrorMessage="Long Description is Required"
@@ -126,7 +126,7 @@
             <i class="fas fa-exclamation-circle" style="color:red"></i>
         </asp:RequiredFieldValidator><br />
 
-        <asp:Label ID="lblActionTaken" runat="server" Text="Action Taken: "></asp:Label>
+        <asp:Label ID="lblActionTaken" runat="server" Text="Action Taken: "></asp:Label><br />
         <asp:TextBox ID="txtActionTaken" TextMode="MultiLine" runat="server" ValidationGroup="validateTicket"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqActionTaken" runat="server"
             ErrorMessage="Action Taken is Required"
@@ -141,7 +141,7 @@
         <asp:LinkButton ID="lbtnSubmit" CssClass="btn btn-primary" runat="server" OnClick="lbtnSubmit_Click" ValidationGroup="validateTicket">Submit</asp:LinkButton>
     </div>
     <div runat="server" id="supportresults" visible="false">
-        <asp:Table ID="tblResults" runat="server">
+        <asp:Table ID="tblResults" runat="server" CssClass="custom-center-table">
             <asp:TableRow ID="rowSDesc" runat="server">
                 <asp:TableCell>Short Description:</asp:TableCell>
             </asp:TableRow>
@@ -162,6 +162,9 @@
             </asp:TableRow>
             <asp:TableRow ID="rowDateClosed" runat="server">
                 <asp:TableCell>Date Closed:</asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow ID="rowETA" runat="server">
+                <asp:TableCell>Date of ETA:</asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="rowLongDesc" runat="server">
                 <asp:TableCell>Long Description:</asp:TableCell>

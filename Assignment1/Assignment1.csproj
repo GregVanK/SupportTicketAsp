@@ -67,13 +67,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ETAPage.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Media\logo.png" />
+    <Content Include="styles.css" />
     <Content Include="TicketFormSheet.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="appcode\DBHelper.cs" />
+    <Compile Include="ETAPage.aspx.cs">
+      <DependentUpon>ETAPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ETAPage.aspx.designer.cs">
+      <DependentUpon>ETAPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

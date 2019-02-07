@@ -51,6 +51,26 @@ namespace Assignment1
                 string longDesc = txtLongDesc.Text;
                 string actionTaken = txtActionTaken.Text;
 
+                TableCell ETADateCell = new TableCell();
+                DateTime date = calDateOpened.SelectedDate;
+                switch (severity.ToLower())
+                {
+                    case "low":
+                        ETADateCell.Text = date.AddDays(3).ToLongDateString();
+                        break;
+                    case "medium":
+                        ETADateCell.Text = date.AddDays(4).ToLongDateString();
+                        break;
+                    case "high":
+                        ETADateCell.Text = date.AddDays(5).ToLongDateString();
+                        break;
+                    case "severe":
+                        ETADateCell.Text = date.AddDays(5).ToLongDateString();
+                        break;
+                }
+                rowETA.Cells.Add(ETADateCell);
+
+
                 TableCell sDescCell = new TableCell();
                 sDescCell.Text = shortDesc;
                 rowSDesc.Cells.Add(sDescCell);

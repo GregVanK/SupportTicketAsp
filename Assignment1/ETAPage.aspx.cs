@@ -11,6 +11,25 @@ namespace Assignment1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblHeader.Text = "Current Date: " + DateTime.Now.ToLongDateString();
+
+            TableCell lowDate = new TableCell();
+            TableCell mediumDate = new TableCell();
+            TableCell highDate = new TableCell();
+            TableCell severeDate = new TableCell();
+            DateTime today = DateTime.Now;
+
+            lowDate.Text = today.AddDays(3).ToLongDateString() + " "+ today.AddDays(3).ToLongTimeString();
+            mediumDate.Text = today.AddDays(4).ToLongDateString() + " " + today.AddDays(4).ToLongTimeString();
+            highDate.Text = today.AddDays(5).ToLongDateString() + " " + today.AddDays(5).ToLongTimeString();
+            severeDate.Text = today.AddDays(5).ToLongDateString() + " " + today.AddDays(5).ToLongTimeString();
+
+            rowLow.Cells.Add(lowDate);
+            rowMedium.Cells.Add(mediumDate);
+            rowHigh.Cells.Add(highDate);
+            rowSevere.Cells.Add(severeDate);
+
+
 
         }
     }

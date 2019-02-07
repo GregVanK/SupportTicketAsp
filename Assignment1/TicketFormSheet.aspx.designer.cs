@@ -391,6 +391,15 @@ namespace Assignment1 {
         protected global::System.Web.UI.WebControls.TableRow rowDateClosed;
         
         /// <summary>
+        /// rowETA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow rowETA;
+        
+        /// <summary>
         /// rowLongDesc control.
         /// </summary>
         /// <remarks>
